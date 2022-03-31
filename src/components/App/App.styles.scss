@@ -1,5 +1,4 @@
 $text-color: white;
-$image_url: url('@images/odaiba-night.jpg');
 $font_url: url('@fonts/roboto-regular.ttf');
 
 @font-face {
@@ -10,23 +9,20 @@ $font_url: url('@fonts/roboto-regular.ttf');
 }
 
 body {
-  background-image: $image_url;
   font-family: 'Roboto', sans-serif;
+  margin: 0;
 }
 
-#counter {
-  color: $text-color;
+#container {
+  display: flex;
+  height: 100%;
+  align-items: stretch;
 
-  h3 {
-    text-align: center;
+  textarea {
+    width: 50%;
   }
 
-  div {
-    display: flex;
-    justify-content: center;
-
-    button {
-      margin: 0 1em;
-    }
+  p {
+    width: 50%;
   }
 }
