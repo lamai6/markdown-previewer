@@ -22,7 +22,13 @@ body {
     width: 50%;
   }
 
-  p {
+  #preview {
     width: 50%;
+
+    img {
+      display: block;
+      max-width: 90%;
+      margin: 0 auto;
+    }
   }
 }

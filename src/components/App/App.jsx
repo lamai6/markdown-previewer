@@ -1,13 +1,16 @@
 import { Component } from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
+import defaultMarkdown from './App.markdown';
 import './App.styles.scss';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      markdown: '',
+      markdown: defaultMarkdown,
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -22,8 +25,15 @@ class App extends Component {
     const { markdown } = this.state;
     return (
       <div id="container">
-        <textarea onChange={this.handleChange} name="editor" id="editor" />
-        <p id="preview">{markdown}</p>
+        <textarea
+          onChange={this.handleChange}
+          value={markdown}
+          name="editor"
+          id="editor"
+        />
+        <div id="preview">
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdown}</ReactMarkdown>
+        </div>
       </div>
     );
   }
