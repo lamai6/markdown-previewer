@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkBreaks from 'remark-breaks';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 import defaultMarkdown from './App.markdown';
@@ -32,7 +33,9 @@ class App extends Component {
           id="editor"
         />
         <div id="preview">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdown}</ReactMarkdown>
+          <ReactMarkdown remarkPlugins={[remarkBreaks, remarkGfm]}>
+            {markdown}
+          </ReactMarkdown>
         </div>
       </div>
     );
