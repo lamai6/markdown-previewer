@@ -2,10 +2,25 @@ import { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import remarkBreaks from 'remark-breaks';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 import defaultMarkdown from './App.markdown';
 import './App.styles.scss';
+
+const components = {
+  code({ inline, className, children }) {
+    const match = /language-(\w+)/.exec(className || '');
+    return !inline && match ? (
+      <SyntaxHighlighter style={dracula} language={match[1]} PreTag="div">
+        {String(children).replace(/\n$/, '')}
+      </SyntaxHighlighter>
+    ) : (
+      <code className={className}>{children}</code>
+    );
+  },
+};
 
 class App extends Component {
   constructor(props) {
@@ -33,7 +48,10 @@ class App extends Component {
           id="editor"
         />
         <div id="preview">
-          <ReactMarkdown remarkPlugins={[remarkBreaks, remarkGfm]}>
+          <ReactMarkdown
+            remarkPlugins={[remarkBreaks, remarkGfm]}
+            components={components}
+          >
             {markdown}
           </ReactMarkdown>
         </div>

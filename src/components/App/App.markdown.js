@@ -7,7 +7,9 @@ export default `# I am a heading element
 I am a \`inline code\`
 
 \`\`\`js
-console.log('I am a line of code')
+this.setState(
+    (state) => (state.count > 0 && { count: state.count - 1 }) || state
+);
 \`\`\`
 
 - I am a list item
