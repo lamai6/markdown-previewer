@@ -4,8 +4,8 @@ import remarkGfm from 'remark-gfm';
 import remarkBreaks from 'remark-breaks';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 import defaultMarkdown from './App.markdown';
 import './App.styles.scss';
 
@@ -40,20 +40,38 @@ class App extends Component {
   render() {
     const { markdown } = this.state;
     return (
-      <div id="container">
-        <textarea
-          onChange={this.handleChange}
-          value={markdown}
-          name="editor"
-          id="editor"
-        />
-        <div id="preview">
-          <ReactMarkdown
-            remarkPlugins={[remarkBreaks, remarkGfm]}
-            components={components}
-          >
-            {markdown}
-          </ReactMarkdown>
+      <div>
+        <div id="header">
+          <h2>
+            <FontAwesomeIcon
+              icon={solid('pen-to-square')}
+              style={{ marginRight: '0.4em' }}
+            />
+            Editor
+          </h2>
+          <h2>
+            <FontAwesomeIcon
+              icon={solid('eye')}
+              style={{ marginRight: '0.4em' }}
+            />
+            Previewer
+          </h2>
+        </div>
+        <div id="container">
+          <textarea
+            onChange={this.handleChange}
+            value={markdown}
+            name="editor"
+            id="editor"
+          />
+          <div id="preview">
+            <ReactMarkdown
+              remarkPlugins={[remarkBreaks, remarkGfm]}
+              components={components}
+            >
+              {markdown}
+            </ReactMarkdown>
+          </div>
         </div>
       </div>
     );
