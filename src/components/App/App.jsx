@@ -61,6 +61,7 @@ class App extends Component {
           <textarea
             onChange={this.handleChange}
             value={markdown}
+            spellCheck="false"
             name="editor"
             id="editor"
           />
