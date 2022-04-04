@@ -1,10 +1,10 @@
-export default `# I am a heading element
+export default `# Welcome to my React Markdown Previewer!
 
-## I am a sub heading element
+## This is a sub-heading...
 
-[I am a link](https://github.com/lamai6/markdown-previewer)
+You can also make text **bold**, _italic_, ~~strikethrough~~ or... ~~**_all of them!_**~~.
 
-I am a \`inline code\`
+Here's some \`inline code\`, and below is multiline code:
 
 \`\`\`js
 this.setState(
@@ -12,10 +12,18 @@ this.setState(
 );
 \`\`\`
 
-- I am a list item
-- Me too
-- **I am a bolded list item**
+There are also [links](https://github.com/lamai6/markdown-previewer).
 
-> I am a blockquote
+> And blockquotes.
+
+| Syntax      | Description |
+| ----------- | ----------- |
+| Header      | Title       |
+| Paragraph   | Text        |
+
+- I am a list
+    - with different indentation levels.
+
+And last but not least, let's not forget embedded images:
 
 ![I am an image](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)`;

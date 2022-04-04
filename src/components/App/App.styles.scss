@@ -20,15 +20,59 @@ body {
 
   textarea {
     width: 50%;
+    padding: 1em;
+    overflow-y: scroll;
+    background: #f8f8f8;
   }
 
   #preview {
     width: 50%;
+    padding: 1em;
+    overflow-y: scroll;
+
+    h1 {
+      padding-bottom: 0.3em;
+      border-bottom: 2px solid #444;
+    }
+
+    h2 {
+      padding-bottom: 0.3em;
+      border-bottom: 1px solid #444;
+    }
+
+    p {
+      code {
+        color: rgb(248, 248, 242);
+        background: rgb(40, 42, 54);
+        padding: 0.3em;
+        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        font-size: 0.875rem;
+        font-weight: bold;
+        border-radius: 0.3em;
+      }
+    }
+
+    table {
+      border-collapse: collapse;
+
+      td,
+      th {
+        border: 1px solid #444;
+        padding: 0.3em 0.5em;
+      }
+    }
 
     img {
       display: block;
       max-width: 90%;
       margin: 0 auto;
+    }
+
+    blockquote {
+      border-left: 3px solid #444;
+      color: #444;
+      padding-left: 0.4em;
+      margin-left: 25px;
     }
   }
 }
