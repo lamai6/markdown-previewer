@@ -20,6 +20,7 @@ const esModules = [
   'ccount',
   'escape-string-regexp',
   'markdown-table',
+  'react-syntax-highlighter',
 ].join('|');
 
 module.exports = {

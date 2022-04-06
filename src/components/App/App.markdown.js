@@ -2,7 +2,7 @@ export default `# Welcome to my React Markdown Previewer!
 
 ## About this project
 
-For more information, you can find the GitHub repository of my app [here](https://github.com/lamai6/markdown-previewer).
+For more information, you can find **the GitHub repository of my app [here](https://github.com/lamai6/markdown-previewer)**.
 
 ## This is a sub-heading...
 
