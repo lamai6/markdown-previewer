@@ -29,6 +29,7 @@ class App extends Component {
       markdown: defaultMarkdown,
     };
     this.handleChange = this.handleChange.bind(this);
+    localStorage.setItem('project_selector', 'markdown-previewer');
   }
 
   handleChange(e) {
