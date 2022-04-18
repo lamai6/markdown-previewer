@@ -7,6 +7,7 @@ import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 import defaultMarkdown from './App.markdown';
+import GitHub from '../GitHub/GitHub';
 import './App.styles.scss';
 
 const components = {
@@ -75,6 +76,7 @@ class App extends Component {
             </ReactMarkdown>
           </div>
         </div>
+        <GitHub />
       </div>
     );
   }
