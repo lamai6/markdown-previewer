@@ -31,6 +31,7 @@ class App extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     localStorage.setItem('project_selector', 'markdown-previewer');
+    localStorage.setItem('fCC_markdown-previewer_hide', 'true');
   }
 
   handleChange(e) {
